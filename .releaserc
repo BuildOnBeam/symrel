@@ -23,8 +23,8 @@
       "semantic-release-jira-releases",
       {
         "projectId": "OB",
-        "releaseNameTemplate": "symrel-v${version}",
-        "releaseDescriptionTemplate": "Release ${version} with the following notes: \n\n ${notes}",
+        "releaseNameTemplate": "Symrel v${version}",
+        "releaseDescriptionTemplate": "Release ${version} \n\n ${notes}",
         "jiraHost": "beam-factory.atlassian.net",
         "released": true,
         "setReleaseDate": true,
