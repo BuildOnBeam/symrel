@@ -41,7 +41,9 @@
           "projectId": "OB",
           "releaseNameTemplate": "v${version}",
           "jiraHost": "beam-factory.atlassian.net",
-          "ticketRegex": "[a-zA-Z]{2,5}-\\d{3,5}"
+          "ticketPrefixes": [
+            "OB"
+          ]
         }
       ]
     ]
