@@ -1,0 +1,45 @@
+name: Docker build and ECR push
+description: Build a Docker image and push to ECR repo
+
+inputs:
+  ecr-full-repo:
+    description: 'ECR repo to push image to'
+    required: true
+  docker-secret-ids:
+    description: 'Secret Manager IDs for Docker build env'
+    required: true
+  docker-tag:
+    description: 'Docker tag to deploy'
+    required: true
+  docker-file:
+    description: 'Dockerfile, e.g. Dockerfile.web'
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+
+    - name: Docker meta
+      id: dockermeta
+      uses: docker/metadata-action@v4
+      with:
+        images: ${{ inputs.ecr-full-repo }}
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    # Docker build args values set in AWS Secrets Manager
+    - name: Build Tag and Push Docker image
+      id: build-image
+      uses: docker/build-push-action@v4
+      with:
+        file: ${{ inputs.docker-file }}
+        context: .
+        tags: ${{ inputs.ecr-full-repo }}:${{ inputs.docker-tag }}
+        labels: ${{ steps.dockermeta.outputs.labels }}
+        push: true
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
