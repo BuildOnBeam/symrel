@@ -1,0 +1,33 @@
+name: Release version
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+run-name: ${{ github.workflow }} by @${{ github.actor }} from ${{ github.ref_name }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Semantic Release
+        uses: cycjimmy/semantic-release-action@v4
+        with:
+          semantic_version: 22
+          extra_plugins: |
+            "@semantic-release/commit-analyzer",
+            "@semantic-release/release-notes-generator",
+            "@semantic-release/github@^9.2.6"
+          branches: |
+            [
+              'master',
+              {
+                name: 'develop',
+                prerelease: true
+              }
+            ]
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
