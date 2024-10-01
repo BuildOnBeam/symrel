@@ -23,7 +23,7 @@
       "semantic-release-jira-releases",
       {
         "projectId": "OB",
-        "releaseNameTemplate": "v${version}",
+        "releaseNameTemplate": "symrel-v${version}",
         "jiraHost": "beam-factory.atlassian.net",
         "ticketPrefixes": [
           "OB"
