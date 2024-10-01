@@ -32,10 +32,6 @@
           "projectId": "OB",
           "releaseNameTemplate": "Test v${version}",
           "jiraHost": "beam-factory.atlassian.net",
-          "ticketPrefixes": [
-            "TEST",
-            "OB"
-          ],
           "ticketRegex": "[a-zA-Z]{3,5}-\\d{3,5}"
         }
       ]
