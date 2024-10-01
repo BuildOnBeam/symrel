@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "prepare": "husky",
-    "commitlint": "commitlint --edit"
+    "release": "semantic-release --debug"
   },
   "author": "",
   "license": "ISC",
@@ -15,7 +15,13 @@
     ]
   },
   "release": {
-    "branch": "master",
+    "branches": [
+      "main",
+      {
+        "name": "develop",
+        "prerelease": true
+      }
+    ],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
