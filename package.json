@@ -11,40 +11,6 @@
       "@commitlint/config-conventional"
     ]
   },
-  "release": {
-    "branches": [
-      "main",
-      {
-        "name": "develop",
-        "prerelease": true
-      }
-    ],
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      [
-        "semantic-release-jira-notes",
-        {
-          "jiraHost": "beam-factory.atlassian.net",
-          "ticketPrefixes": [
-            "OB"
-          ]
-        }
-      ],
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/github",
-      [
-        "semantic-release-jira-releases",
-        {
-          "projectId": "OB",
-          "releaseNameTemplate": "v${version}",
-          "jiraHost": "beam-factory.atlassian.net",
-          "ticketPrefixes": [
-            "OB"
-          ]
-        }
-      ]
-    ]
-  },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",

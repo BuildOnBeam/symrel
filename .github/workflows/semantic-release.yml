@@ -21,14 +21,6 @@ jobs:
             "@semantic-release/github@9.2.6"
             "semantic-release-jira-releases@0.7.2"
             "semantic-release-jira-notes@4.0.0"
-          branches: |
-            [
-              'main',
-              {
-                name: 'develop',
-                prerelease: true
-              }
-            ]
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JIRA_AUTH: ${{ secrets.JIRA_AUTH }}
