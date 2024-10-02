@@ -2,13 +2,11 @@
   "branches": [
     {
       "name": "release",
-      "prerelease": false,
-      "tagFormat": "v${version}"
+      "prerelease": false
     },
     {
       "name": "main",
-      "prerelease": true,
-      "tagFormat": "v${version}-rc"
+      "prerelease": true
     }
   ],
   "plugins": [
