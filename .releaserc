@@ -24,7 +24,7 @@
       {
         "projectId": "OB",
         "releaseNameTemplate": "Symrel v${version}",
-        "releaseDescriptionTemplate": "Release ${version} \n\n ${notes}",
+        "releaseDescriptionTemplate": "Semantic Release ${version}",
         "jiraHost": "beam-factory.atlassian.net",
         "released": true,
         "setReleaseDate": true,
