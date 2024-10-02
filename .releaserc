@@ -1,9 +1,14 @@
 {
   "branches": [
-    "release",
+    {
+      "name": "release",
+      "prerelease": false,
+      "tagFormat": "v${version}"
+    },
     {
       "name": "main",
-      "prerelease": true
+      "prerelease": true,
+      "tagFormat": "v${version}-rc"
     }
   ],
   "plugins": [
