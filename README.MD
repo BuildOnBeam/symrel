@@ -29,7 +29,7 @@ Using trunk based development, we can integrate feature branches to main wheneve
 When you need a release you need to merge main into the release branch, this will trigger final release including, release notes and JIRA ticket updates.
 
 ```mermaid
-%%{init: { 'gitGraph': {'showBranches': false, 'mainBranchOrder': 1}} }%%
+%%{init: { 'gitGraph': {'mainBranchOrder': 1}} }%%
 gitGraph
     commit id: "initial"
 
