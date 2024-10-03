@@ -3,59 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "prepare": "husky",
-    "release": "semantic-release --debug"
+    "prepare": "husky"
   },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
     ]
   },
-  "release": {
-    "branches": [
-      "main",
-      {
-        "name": "develop",
-        "prerelease": true
-      }
-    ],
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      [
-        "semantic-release-jira-notes",
-        {
-          "jiraHost": "beam-factory.atlassian.net",
-          "ticketPrefixes": [
-            "OB"
-          ]
-        }
-      ],
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/github",
-      [
-        "semantic-release-jira-releases",
-        {
-          "projectId": "OB",
-          "releaseNameTemplate": "v${version}",
-          "jiraHost": "beam-factory.atlassian.net",
-          "ticketPrefixes": [
-            "OB"
-          ]
-        }
-      ]
-    ]
-  },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
-    "@semantic-release/github": "^9.2.6",
-    "husky": "^9.1.6",
-    "semantic-release": "^22.0.12",
-    "semantic-release-jira-notes": "^4.0.0",
-    "semantic-release-jira-releases": "^0.7.2"
-  },
-  "dependencies": {
-    "@semantic-release/commit-analyzer": "^11.1.0",
-    "@semantic-release/release-notes-generator": "^12.1.0"
+    "husky": "^9.1.6"
   }
 }

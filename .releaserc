@@ -1,0 +1,40 @@
+{
+  "branches": [
+    {
+      "name": "release",
+      "prerelease": false
+    },
+    {
+      "name": "main",
+      "prerelease": true
+    }
+  ],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    [
+      "semantic-release-jira-notes",
+      {
+        "jiraHost": "beam-factory.atlassian.net",
+        "ticketPrefixes": [
+          "OB"
+        ]
+      }
+    ],
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/github",
+    [
+      "semantic-release-jira-releases",
+      {
+        "projectId": "OB",
+        "releaseNameTemplate": "Symrel v${version}",
+        "releaseDescriptionTemplate": "Semantic Release ${version}",
+        "jiraHost": "beam-factory.atlassian.net",
+        "released": true,
+        "setReleaseDate": true,
+        "ticketPrefixes": [
+          "OB"
+        ]
+      }
+    ]
+  ]
+}
