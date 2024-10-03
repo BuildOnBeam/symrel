@@ -75,4 +75,3 @@ gitGraph
     checkout main
 
 ```
-
