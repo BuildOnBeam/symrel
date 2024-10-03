@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      - develop
+      - release
 
 run-name: ${{ github.workflow }} by @${{ github.actor }} from ${{ github.ref_name }}
 
