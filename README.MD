@@ -64,6 +64,7 @@ gitGraph
     checkout main
 
 
+
     checkout fix/OB-123
     commit id: "fix(OB-123): fix menu"
     checkout main
@@ -75,6 +76,5 @@ gitGraph
     checkout main
 
 ```
-
 
 
